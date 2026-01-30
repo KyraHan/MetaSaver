@@ -1,6 +1,42 @@
+pluginManagement {
+    includeBuild("../node_modules/@react-native/gradle-plugin")
+}
+
+plugins {
+    id("com.facebook.react.settings")
+}
+
+extensions.configure(com.facebook.react.ReactSettingsExtension) { ex ->
+    ex.autolinkLibrariesFromCommand()
+}
+
+/**
+ * 👇👇 BURASI ÇOK KRİTİK
+ * ffmpeg-kit için repo ekliyoruz
+ */
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://www.jitpack.io" }
+        maven { url "https://artifactory.appodeal.com/appodeal-public" }
+    }
+}
+
+
+rootProject.name = "MetaSaver"
+
+include(":app")
+includeBuild("../node_modules/@react-native/gradle-plugin")
+
+
+/*
+old
 pluginManagement { includeBuild("../node_modules/@react-native/gradle-plugin") }
 plugins { id("com.facebook.react.settings") }
 extensions.configure(com.facebook.react.ReactSettingsExtension){ ex -> ex.autolinkLibrariesFromCommand() }
 rootProject.name = 'MetaSaver'
 include ':app'
 includeBuild('../node_modules/@react-native/gradle-plugin')
+*/
