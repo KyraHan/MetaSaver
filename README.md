@@ -28,7 +28,7 @@ Metadata is excluded **by design**, not by limitation.
 
 ## Installation
 ```bash
-git clone https://github.com/username/metasaver.git
+git clone https://github.com/KyraHan/MetaSaver.git
 cd metasaver
 yarn install
 yarn start
